@@ -3,8 +3,8 @@ import { people, getById } from "./db";
 const resolvers = {
   Query: {
     people: () => people,
-    person: () => getById(),
-  },
+    person: (_, { id }) => getById(id)
+  }
 };
 
 export default resolvers;
